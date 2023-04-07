@@ -2,6 +2,15 @@ from urllib.parse import parse_qs
 from urllib.parse import urlsplit
 import urllib3
 import re
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--user',  type=str, help='user name')
+parser.add_argument('--password', type=str, help='password')
+parser.add_argument('--way', type=str, help='which carrier?[njxy|cmcc|[NULL]]')
+args = parser.parse_args()
+
+# 用户名/密码/运营商njxy|cmcc|[NULL]
+login_data = [args.user, args.password, args.way]
 
 # 请求头
 headers = {
@@ -109,8 +118,6 @@ def isConnected():
         return False
 
 
-# 用户名/密码/运营商njxy|cmcc|[NULL]
-login_data = ["1022173301", "Tuna908%", "njxy"]
 
 user_post = {
     "DDDDD": "",
