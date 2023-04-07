@@ -1,0 +1,8 @@
+name: al
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+dependencies:
+  - pip
+  - requests
+  - urllib3
