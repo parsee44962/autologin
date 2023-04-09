@@ -18,7 +18,7 @@ headers = {
                   "Safari/537.36",
 }
 # 请求链接
-static_url = "http://1.1.1.1"
+static_url = "http://6.6.6.6/?isReback=1"
 
 get_par = {
     "wlanuserip": "",  #
@@ -152,7 +152,8 @@ while not isConnected():
         http.request('POST', URL, fields=user_post, headers=login_headers)
         # requests.post(URL, data=user_post, headers=login_headers)
         print("OK")
-    except "BAD_URL":
+    except:
         print("URL_BROKEN")
+        exit()
 
 print("Connected,no operation!")
