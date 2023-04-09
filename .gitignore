@@ -3,5 +3,5 @@
 __pycache__/
 dist/
 bulid/
-/main.pyc
-/main.spec
+main.pyc
+main.spec
