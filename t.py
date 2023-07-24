@@ -3,8 +3,15 @@ import re
 import argparse
 import json
 import sys
-
+import os
 def isConnected():
+
+        if os.system("ping -c 1 -W 1 baidu.com") == 0:
+            return True
+        else:
+            return False
+
+def double_check():       
     try:
         conn = http.client.HTTPSConnection("p.njupt.edu.cn", 802)
         payload = ''
@@ -73,9 +80,8 @@ while not isConnected():
         conn1 = http.client.HTTPSConnection("p.njupt.edu.cn", 802)
         query_params = "&".join([f"{key}={value}" for key, value in get_par_fin.items()])
         conn1.request("GET","/eportal/portal/login?"+query_params,payload,headers)
-
-
+        if double_check():
+            break
     except:
         print("Unknow ERROR")
-        sys.exit(1)
-        pass
+        break
